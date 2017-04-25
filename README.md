@@ -54,7 +54,9 @@ Para poder correr las pruebas end to end, se usa la herramienta protractor y par
 [modificacionCors]: https://raw.githubusercontent.com/feranto/azureOpenSourceDayMeanHol/master/imagenes/CORS.PNG "Modificación CORS"
 
 
-2.  Crear un nuevo "servicio" de angular
+2.  Crear un nuevo "servicio" de angular, para ello ejecutamos los siguientes comandos:
+`ng generate service contactsService`
+
 3.  Modificar la vista para poder listar todos los contactos
 4.  Conectar la vista con el servicio
 5.  Modificar la vista para poder listar un contacto por ID
