@@ -10,3 +10,7 @@ Código angularjs para la solución del frontend corriendo en Azure.
 2.  Una vez instalado podemos utilizar el comando `ng` en nuestra terminal para crear un nuevo proyecto angular
 
 `ng new appContactos`
+
+3.  Ingresamos al nuevo directorio creado appContactos y ejecutamos el siguiente comando
+
+`ng serve`
