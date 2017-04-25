@@ -151,6 +151,34 @@ export class Contact {
 </ul>
 ```
 
+6.  Ahora reemplazamos el codigo de app.module.ts
+``` javascript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { AppComponent } from './app.component';
+
+import {ContactsService} from './contacts-service.service';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule
+  ],
+  providers: [ContactsService],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+``` 
+
+
 ## Deployar en Azure ## 
 
 1.  Crear AppService
