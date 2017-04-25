@@ -57,10 +57,99 @@ Para poder correr las pruebas end to end, se usa la herramienta protractor y par
 2.  Crear un nuevo "servicio" de angular, para ello ejecutamos los siguientes comandos:
 `ng generate service contactsService`
 
-3.  Modificar la vista para poder listar todos los contactos
-4.  Conectar la vista con el servicio
-5.  Modificar la vista para poder listar un contacto por ID
-6.  Conectar la vista con el servicio para obtener un contacto por ID
+3.  Reemplazamos el codigo de contactsService por:
+```javascript
+import { Injectable } from '@angular/core';
+import {Http, Headers} from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
+
+import { Contact } from './app.component';
+
+@Injectable()
+export class ContactsService {
+
+  private apiURL = 'http://ferantoapitest.azurewebsites.net';
+
+  constructor(private http: Http) {}
+
+  getContacts(): Promise< Contact[] > {
+    const _headers = new Headers();
+    _headers.append('Content-Type', 'application/json');
+    _headers.append('ZUMO-API-VERSION', '2.0.0');
+
+    return this.http.get(this.apiURL + '/contacts', {headers : _headers})
+                    .toPromise()
+                    .then(response => response.json() as Contact[])
+                    .catch(this.handleError);
+  }
+
+
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+  }
+
+
+}
+
+```
+
+4.  Luego modificamos app.component.ts y agregamos el siguiente codigo:
+
+``` javascript
+import { Component } from '@angular/core';
+import { ContactsService } from './contacts-service.service';
+
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'app works!';
+  contacts: Contact[];
+
+  constructor(
+    private contactsService: ContactsService
+  ) { }
+
+  getContacts(): void {
+    this.contactsService
+      .getContacts()
+      .then(contacts => this.contacts = contacts);
+  }
+
+
+  ngOnInit(): void {
+    this.getContacts();
+  }
+
+}
+
+export class Contact {
+  id: number;
+  name: string;
+  email: string;
+}
+
+```
+
+5.  Ahora modificamos la vista en app.component.html
+``` html
+    <h1>
+  {{title}}
+</h1>
+
+<ul>
+  <li *ngFor="let contact of contacts" >
+    <span class="badge">{{contact.id}}</span>
+    <span>{{contact.name}}</span>    
+  </li>
+</ul>
+```
 
 ## Deployar en Azure ## 
 
