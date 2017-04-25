@@ -21,6 +21,10 @@ export class AppComponent {
       .then(contacts => this.contacts = contacts);
   }
 
+  previewContacts(): void {
+    console.log(this.contacts);
+  }
+
   ngOnInit(): void {
     this.getContacts();
   }
