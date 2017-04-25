@@ -35,3 +35,12 @@ Para poder correr las pruebas end to end, se usa la herramienta protractor y par
 
 3.  Y también podemos ejecutar typescript lint para verificar buenas prácticas de escritura de código typescript con el siguiente comando:
 `ng lint`
+
+## Construcción de Nuestro Código Angular ##
+
+1.  Para poder generar codigo para distribuir lo podemos hacer de dos maneras:
+    1.  Para entornos de prueba con posibilidad de debuggear, usamos el siguiente comando:
+        `ng build`
+        Esto generar el codigo resultante en una nueva carpeta llamada `dist`
+    2.  Para entornos productivos, angular-cli puede generar un output completamente, minificado, ofuscado utilizando webpack. Para ello debemos usar el comando:
+        `ng build --prod`
