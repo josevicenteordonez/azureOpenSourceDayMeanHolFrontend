@@ -10,7 +10,6 @@ import { ContactsService } from './contacts-service.service';
 export class AppComponent {
   title = 'app works!';
   contacts: Contact[];
-  selectedContact: Contact;
 
   constructor(
     private contactsService: ContactsService
