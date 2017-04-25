@@ -19,9 +19,10 @@ export class ContactsService {
 
     return this.http.get(this.apiURL + '/contacts', {headers : _headers})
                     .toPromise()
-                    .then(response => response.json().data as Contact[])
+                    .then(response => response.json() as Contact[])
                     .catch(this.handleError);
   }
+
 
 
   private handleError(error: any): Promise<any> {
