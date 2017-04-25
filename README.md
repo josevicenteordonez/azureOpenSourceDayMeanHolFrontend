@@ -48,6 +48,12 @@ Para poder correr las pruebas end to end, se usa la herramienta protractor y par
 ## Modificación de codigo para conectarse a nuestra API ##
 
 1.  Modificar acceso CORS de nuestra API en Azure
+
+![alt text][modificacionCors]
+
+[modificacionCors]: https://raw.githubusercontent.com/feranto/azureOpenSourceDayMeanHol/master/imagenes/CORS.PNG "Modificación CORS"
+
+
 2.  Crear un nuevo "servicio" de angular
 3.  Modificar la vista para poder listar todos los contactos
 4.  Conectar la vista con el servicio
@@ -57,6 +63,18 @@ Para poder correr las pruebas end to end, se usa la herramienta protractor y par
 ## Deployar en Azure ## 
 
 1.  Crear AppService
+![alt text][]
+
+[]: https://raw.githubusercontent.com/feranto/azureOpenSourceDayMeanHol/master/imagenes/CORS.PNG ""
 2.  Crear AppService Plan
+![alt text][]
+
+[]: https://raw.githubusercontent.com/feranto/azureOpenSourceDayMeanHol/master/imagenes/CORS.PNG ""
 3.  Deployar Codigo
+![alt text][]
+
+[]: https://raw.githubusercontent.com/feranto/azureOpenSourceDayMeanHol/master/imagenes/CORS.PNG ""
 4.  Probar aplicación
+![alt text][]
+
+[]: https://raw.githubusercontent.com/feranto/azureOpenSourceDayMeanHol/master/imagenes/CORS.PNG ""
