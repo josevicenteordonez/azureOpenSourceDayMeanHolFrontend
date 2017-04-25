@@ -44,3 +44,19 @@ Para poder correr las pruebas end to end, se usa la herramienta protractor y par
         Esto generar el codigo resultante en una nueva carpeta llamada `dist`
     2.  Para entornos productivos, angular-cli puede generar un output completamente, minificado, ofuscado utilizando webpack. Para ello debemos usar el comando:
         `ng build --prod`
+
+## Modificación de codigo para conectarse a nuestra API ##
+
+1.  Modificar acceso CORS de nuestra API en Azure
+2.  Crear un nuevo "servicio" de angular
+3.  Modificar la vista para poder listar todos los contactos
+4.  Conectar la vista con el servicio
+5.  Modificar la vista para poder listar un contacto por ID
+6.  Conectar la vista con el servicio para obtener un contacto por ID
+
+## Deployar en Azure ## 
+
+1.  Crear AppService
+2.  Crear AppService Plan
+3.  Deployar Codigo
+4.  Probar aplicación
