@@ -14,3 +14,5 @@ Código angularjs para la solución del frontend corriendo en Azure.
 3.  Ingresamos al nuevo directorio creado appContactos y ejecutamos el siguiente comando
 
 `ng serve`
+
+4. Luego podemos navegar al la página [http://localhost:4200/](http://localhost:4200/) y veremos nuestra aplicación corriendo
