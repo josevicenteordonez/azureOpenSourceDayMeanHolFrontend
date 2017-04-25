@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ContactsService } from './contacts-service.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,6 +9,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app works!';
+  contacts: Contact[];
+  selectedContact: Contact;
+
+  constructor(
+    private contactsService: ContactsService
+  ) { }
+
+  getContacts(): void {
+    this.contactsService
+      .getContacts()
+      .then(contacts => this.contacts = contacts);
+  }
+
+  ngOnInit(): void {
+    this.getContacts();
+  }
+
 }
 
 export class Contact {

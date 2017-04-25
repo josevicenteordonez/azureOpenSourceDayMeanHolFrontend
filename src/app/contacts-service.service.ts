@@ -6,7 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import { Contact } from './app.component';
 
 @Injectable()
-export class ContactsServiceService {
+export class ContactsService {
 
   private apiURL = 'http://ferantoapitest.azurewebsites.net';
 
